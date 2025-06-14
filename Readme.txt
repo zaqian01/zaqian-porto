@@ -1,69 +1,103 @@
-# ZAQIAN - World-Class Programmer Portfolio
+# ZAQIAN - Programmer Portfolio
 
-![ZAQIAN Profile Banner](img/fallback.jpg) Halo! Selamat datang di repositori portofolio saya. Saya **ZAQIAN**, seorang programmer yang bersemangat dan berdedikasi, selalu ingin belajar hal-hal baru dan membuat solusi inovatif. Portofolio ini menampilkan beberapa proyek pilihan yang mencerminkan keterampilan dan minat saya dalam pengembangan web.
+Hello! Welcome to my portfolio repository. I'm **ZAQIAN**, a passionate and dedicated programmer, always eager to learn new things and craft innovative solutions. This portfolio showcases a selection of projects that reflect my skills and interests in web development.
 
-## 🚀 Sekilas Tentang Saya
+## 🚀 A Glimpse About Me
 
-Saya adalah seorang programmer yang sangat tertarik untuk menjelajahi berbagai teknologi. Saya percaya bahwa pembelajaran adalah proses yang berkelanjutan, dan saya selalu berusaha untuk memperluas pengetahuan dan keahlian saya dalam dunia pengembangan perangkat lunak. Tujuan saya adalah menciptakan aplikasi yang bersih, efisien, dan ramah pengguna yang memecahkan masalah nyata.
+I am a programmer deeply interested in exploring diverse technologies. I believe that learning is a continuous process, and I consistently strive to expand my knowledge and expertise in the world of software development. My goal is to create clean, efficient, and user-friendly applications that solve real-world problems.
 
-## 🛠️ Keterampilan Teknis
+## 🛠️ Technical Skills
 
-Berikut adalah beberapa teknologi dan alat yang saya kuasai:
+Here are some of the technologies and tools I'm proficient with:
 
 * **Front-end:** HTML5, CSS3, JavaScript (ES6+), React.js
 * **Back-end:** Node.js, Express.js, SQL
 * **Version Control:** Git, GitHub
-* **Desain & Lain-lain:** Basic Figma
+* **Design & Others:** Basic Figma
 
-## 💡 Proyek Pilihan
+## 💡 Featured Projects
 
-Berikut adalah beberapa proyek yang saya banggakan. Setiap proyek mencakup deskripsi singkat, teknologi yang digunakan, serta tautan ke repositori GitHub dan demo langsung (jika tersedia).
+Below are some of the projects I'm proud of. Each project includes a brief description, the technologies used, and links to the GitHub repository and live demo (if available).
 
 ### 1. Culinary Compass: Recipe Finder
 
-* **Deskripsi:** Aplikasi web yang memungkinkan pengguna mencari dan menemukan berbagai resep masakan dengan mengambil data dari API eksternal.
-* **Teknologi:** React.js, External API, CSS3
-* **Repositori GitHub:** [https://github.com/zaqian01/RecipeFinder-App](https://github.com/zaqian01/RecipeFinder-App)
-* **Demo Langsung:** [https://recipe-finder-app-aoub.vercel.app/](https://recipe-finder-app-aoub.vercel.app/)
+* **Description:** A web application that fetches and displays recipes from an external API, allowing users to discover new dishes.
+* **Technologies:** React.js, External API, CSS3
+* **GitHub Repository:** [https://github.com/zaqian01/RecipeFinder-App](https://github.com/zaqian01/RecipeFinder-App)
+* **Live Demo:** [https://recipe-finder-app-aoub.vercel.app/](https://recipe-finder-app-aoub.vercel.app/)
 
 ### 2. WeatherWise: Real-time Weather App
 
-* **Deskripsi:** Aplikasi cuaca intuitif yang menyediakan kondisi cuaca saat ini dan prakiraan berdasarkan lokasi pengguna atau pencarian.
-* **Teknologi:** JavaScript, OpenWeather API, HTML5, CSS3
-* **Repositori GitHub:** [https://github.com/zaqian01/My-Weather-App](https://github.com/zaqian01/My-Weather-App)
-* **Demo Langsung:** [https://zaqian01.github.io/My-Weather-App/](https://zaqian01.github.io/My-Weather-App/)
+* **Description:** An intuitive weather application providing current weather conditions and forecasts based on user location or search.
+* **Technologies:** JavaScript, OpenWeather API, HTML5, CSS3
+* **GitHub Repository:** [https://github.com/zaqian01/My-Weather-App](https://github.com/zaqian01/My-Weather-App)
+* **Live Demo:** [https://zaqian01.github.io/My-Weather-App/](https://zaqian01.github.io/My-Weather-App/)
 
-### 3. TaskMaster: Advanced To-Do List
+### 3. TaskMaster: Advanced To-Do List App
 
-* **Deskripsi:** Aplikasi daftar tugas kaya fitur untuk mengelola tugas, mendukung penambahan, pengeditan, penghapusan, dan pemfilteran.
-* **Teknologi:** JavaScript, HTML5, CSS3, Local Storage
-* **Repositori GitHub:** [https://github.com/zaqian01/My-ToDo-List-App](https://github.com/zaqian01/My-ToDo-List-App)
-* **Demo Langsung:** [https://zaqian01.github.io/My-ToDo-List-App/](https://zaqian01.github.io/My-ToDo-List-App/)
+* **Description:** A feature-rich to-do list application for managing tasks, supporting adding, editing, deleting, and filtering.
+* **Technologies:** JavaScript, HTML5, CSS3, Local Storage
+* **GitHub Repository:** [https://github.com/zaqian01/My-ToDo-List-App](https://github.com/zaqian01/My-ToDo-List-App)
+* **Live Demo:** [https://zaqian01.github.io/My-ToDo-List-App/](https://zaqian01.github.io/My-ToDo-List-App/)
 
-### 4. Nero Kopi: Coffee Shop Website (On Going)
+### 4. Nero Kopi: Coffee Shop Website
 
-* **Deskripsi:** Situs web statis modern dan responsif untuk kedai kopi, menampilkan menu, suasana, dan informasi kontak.
-* **Teknologi:** HTML5, CSS3, Responsive Design, Swiper.js
-* **Repositori GitHub:** [https://github.com/zaqian01/NeroKopi-Website](https://github.com/zaqian01/NeroKopi-Website)
-* **Demo Langsung:** *Demo sedang dalam pengembangan.*
+* **Description:** A modern and responsive static website for a coffee shop, showcasing menu, ambiance, and contact information.
+* **Technologies:** HTML5, CSS3, Responsive Design, Swiper.js
+* **GitHub Repository:** [https://github.com/zaqian01/nero-kopi](https://github.com/zaqian01/nero-kopi)
+* **Live Demo:** [https://nerokopi.netlify.app/](https://nerokopi.netlify.app/)
 
-### 5. ShopZen: E-commerce Platform (On Going)
+## 🚀 How to Deploy This Portfolio
 
-* **Deskripsi:** Prototipe platform e-commerce dengan daftar produk, fungsionalitas keranjang belanja, dan otentikasi pengguna.
-* **Teknologi:** React.js (Frontend), Node.js, Express.js (Backend), MongoDB (direncanakan)
-* **Repositori GitHub (Frontend):** [https://github.com/zaqian01/ShopZen-Frontend](https://github.com/zaqian01/ShopZen-Frontend)
-* **Repositori GitHub (Backend):** [https://github.com/zaqian01/ShopZen-Backend](https://github.com/zaqian01/ShopZen-Backend)
-* **Demo Langsung:** *Demo sedang dalam pengembangan.*
+This portfolio is a purely static website built with HTML, CSS, and JavaScript, making it very easy to deploy on various static hosting platforms.
 
-## 📞 Hubungi Saya
+Here are some popular options:
 
-Tertarik untuk berkolaborasi atau ingin bertanya? Jangan ragu untuk menghubungi saya!
+### Option 1: GitHub Pages (Highly Recommended)
+
+If this repository is your main portfolio repository, GitHub Pages is the easiest way to deploy it.
+
+1.  **Ensure Repository Name:** If you want your site to be accessible via `https://<username>.github.io/`, make sure your repository name is `<username>.github.io`. Otherwise, the site will be accessible via `https://<username>.github.io/<repository-name>/`.
+2.  **Go to Repository Settings:** In your GitHub repository, click on the `Settings` tab.
+3.  **Select Pages:** In the left sidebar, click `Pages`.
+4.  **Choose Source:** Under the "Build and deployment" section, select `Deploy from a branch`.
+5.  **Select Branch & Folder:** Choose `main` (or `master`) as your branch, and select `/ (root)` as the folder where your code is located.
+6.  **Save:** Click `Save`.
+7.  **Done!** GitHub Pages will build and deploy your site. It usually becomes available within a few minutes at the URL displayed on the Pages settings page.
+
+### Option 2: Vercel
+
+Vercel offers incredibly easy deployment, especially for front-end projects.
+
+1.  **Visit Vercel:** Go to [https://vercel.com/](https://vercel.com/) and log in (you can use your GitHub account).
+2.  **Import Project:** Click "New Project" and import your portfolio's GitHub repository.
+3.  **Configure (Optional):** Vercel will automatically detect that this is a static HTML/CSS/JS project. You likely won't need to change any settings.
+4.  **Deploy:** Click "Deploy". Vercel will automatically deploy your site and provide you with a live URL.
+
+### Option 3: Netlify
+
+Similar to Vercel, Netlify also provides quick deployment for static sites.
+
+1.  **Visit Netlify:** Go to [https://www.netlify.com/](https://www.netlify.com/) and log in (you can use your GitHub account).
+2.  **Import from Git:** Click "Add new site" -> "Import an existing project" -> "Deploy with GitHub".
+3.  **Select Repository:** Choose your portfolio repository.
+4.  **Build Settings:** Ensure "Base directory" is empty, "Build command" is empty, and "Publish directory" is `./`.
+5.  **Deploy Site:** Click "Deploy site". Netlify will build and deploy your site, providing a unique URL.
+
+---
+
+## 🤝 Contributing
+
+If you have any suggestions, improvements, or would like to report a bug, feel free to open an issue or submit a pull request in this repository.
+
+## ✉️ Contact Me
 
 * **WhatsApp:** [+62 821-2340-9344](https://wa.me/6282123409344)
 * **Email:** [zaqianel@gmail.com](mailto:zaqianel@gmail.com)
 * **GitHub:** [github.com/zaqian01](https://github.com/zaqian01)
 
-Terima kasih telah mengunjungi portofolio saya! 😊
+Thank you for visiting my portfolio! 😊
 
 ---
+
 © 2025 ZAQIAN. All rights reserved.
