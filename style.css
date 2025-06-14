@@ -209,7 +209,7 @@ body.site-loaded .header {
 }
 
 .menu-toggle {
-    display: none;
+    display: none; /* Hidden by default on desktop */
     font-size: 2em;
     background: none;
     border: none;
@@ -247,6 +247,10 @@ body.site-loaded .header {
     background-color: var(--background-color);
     position: relative; /* For potential background effects */
     overflow: hidden; /* Important for animations */
+    background-image: url('https://source.unsplash.com/random/1600x900/?abstract,technology'); /* Example background image */
+    background-size: cover;
+    background-attachment: fixed; /* Parallax effect */
+    background-position: center center;
 }
 
 .hero-container {
@@ -256,6 +260,8 @@ body.site-loaded .header {
     justify-content: center;
     gap: 80px; /* More space between content and image */
     flex-wrap: wrap;
+    position: relative; /* Ensure content is above background */
+    z-index: 1;
 }
 
 .hero-content {
@@ -330,7 +336,7 @@ body.site-loaded .header {
 .hero-image img {
     width: 350px; /* Larger image */
     height: 350px;
-    border-radius: 50%;
+    border-radius: 50%; /* Keep it perfectly circular */
     object-fit: cover;
     border: 7px solid var(--primary-color); /* Thicker border */
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Stronger, softer shadow */
@@ -487,26 +493,57 @@ body.dark-mode .btn-project.btn-github {
     font-weight: 600;
 }
 
-.skills-list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px; /* More space between skills */
-    margin-top: 10px;
+/* New styles for skills grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjust min-width as needed */
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: center; /* Center items horizontally */
 }
 
-.skills-list li {
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 10px 18px; /* Larger skill badges */
-    border-radius: 25px; /* More rounded */
-    font-size: 1em; /* Slightly larger text */
-    font-weight: 500;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+.skill-item {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    min-width: 100px; /* Ensure minimum width */
 }
-.skills-list li:hover {
+
+.skill-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-dark);
     background-color: var(--hover-color);
-    transform: translateY(-3px);
+}
+
+.skill-item:hover span {
+    color: #fff; /* Text color change on hover */
+}
+
+.skill-item img {
+    width: 48px; /* Standard icon size */
+    height: 48px;
+    margin-bottom: 10px;
+    object-fit: contain; /* Ensure logo scales properly */
+    filter: grayscale(0%); /* Ensure colors are vibrant */
+}
+
+/* Dark mode adjustments for skill icons that might be dark */
+body.dark-mode .skill-item img {
+    filter: brightness(1.2); /* Slightly brighten for dark mode if needed */
+}
+
+.skill-item span {
+    font-size: 0.95em;
+    font-weight: 600;
+    color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
 
@@ -673,9 +710,24 @@ body.dark-mode .social-links a i {
         max-width: 450px; /* Limit card width on smaller screens for better spacing */
         margin: 0 auto;
     }
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust for smaller screens */
+        justify-content: center;
+    }
+    .skill-item {
+        padding: 12px;
+    }
+    .skill-item img {
+        width: 40px;
+        height: 40px;
+    }
+    .skill-item span {
+        font-size: 0.9em;
+    }
 }
 
 @media (max-width: 768px) {
+    /* Hide desktop nav and show hamburger */
     .header .nav {
         display: none;
         flex-direction: column;
@@ -724,7 +776,7 @@ body.dark-mode .social-links a i {
 
 
     .menu-toggle {
-        display: block;
+        display: block; /* Show hamburger on mobile */
         margin-left: 20px; /* Ensure space from logo */
         order: 2; /* Place after logo */
     }
@@ -778,6 +830,26 @@ body.dark-mode .social-links a i {
     .project-links {
         justify-content: center; /* Center project buttons */
     }
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); /* Further adjustment for smaller tablets */
+    }
+    .skill-item {
+        padding: 10px;
+    }
+    .skill-item img {
+        width: 35px;
+        height: 35px;
+    }
+    .skill-item span {
+        font-size: 0.85em;
+    }
+    .whatsapp-btn {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+    .social-links a i { /* Untuk ikon Font Awesome */
+        font-size: 40px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -817,9 +889,18 @@ body.dark-mode .social-links a i {
     .project-info h3 {
         font-size: 1.4em;
     }
-    .skills-list li {
-        font-size: 0.85em;
-        padding: 8px 14px;
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Even smaller for mobile */
+    }
+    .skill-item {
+        padding: 8px;
+    }
+    .skill-item img {
+        width: 30px;
+        height: 30px;
+    }
+    .skill-item span {
+        font-size: 0.8em;
     }
     .whatsapp-btn {
         font-size: 1em;
