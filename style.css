@@ -1,0 +1,831 @@
+/* --- Global Styles --- */
+:root {
+    --primary-color: #007bff; /* Vibrant Blue */
+    --accent-color: #04D9FF; /* A lively accent for highlights */
+    --secondary-color: #6c757d;
+    --text-color: #333;
+    --background-color: #f8f9fa;
+    --card-background: #ffffff;
+    --border-color: #e9ecef;
+    --hover-color: #0056b3;
+    --heading-font: 'Poppins', sans-serif;
+    --body-font: 'Inter', sans-serif;
+    --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --shadow-dark: 0 8px 30px rgba(0, 0, 0, 0.2);
+    --card-background-rgb: 255, 255, 255; /* RGB for rgba() */
+    --accent-color-rgb: 4, 217, 255; /* RGB for accent-color */
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+    --text-color: #e2e6e9;
+    --background-color: #1a202c; /* Deeper, richer dark background */
+    --card-background: #2d3748; /* Darker card background */
+    --border-color: #4a5568;
+    --primary-color: #63b3ed; /* Lighter blue for dark mode primary */
+    --accent-color: #00e0ff; /* Lighter accent for dark mode */
+    --hover-color: #4299e1;
+    --card-background-rgb: 45, 55, 72; /* RGB for rgba() in dark mode */
+    --accent-color-rgb: 0, 224, 255; /* RGB for accent-color in dark mode */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.7; /* Slightly increased for better readability */
+    color: var(--text-color);
+    background-color: var(--background-color);
+    transition: background-color 0.4s ease, color 0.4s ease; /* Smoother transitions */
+    overflow-x: hidden; /* Prevent horizontal scroll from animations */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px; /* Slightly more padding on smaller screens */
+}
+
+.section-padding {
+    padding: 100px 0; /* More generous padding */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.8em; /* Slightly larger */
+    font-weight: 700;
+    margin-bottom: 70px; /* More space below title */
+    color: var(--primary-color);
+    font-family: var(--heading-font);
+    position: relative;
+    padding-bottom: 15px; /* Space for thicker underline */
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px; /* Wider underline */
+    height: 5px; /* Thicker underline */
+    background-color: var(--primary-color);
+    border-radius: 3px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--hover-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 30px; /* Larger buttons */
+    border-radius: 8px; /* More rounded */
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 1.05em;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: 2px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
+    transform: translateY(-2px); /* Subtle lift on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    margin-left: 15px;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Header / Navigation Bar --- */
+.header {
+    background-color: rgba(var(--card-background-rgb), 0.9); /* Semi-transparent background */
+    backdrop-filter: blur(8px); /* More pronounced blur effect */
+    padding: 15px 0; /* Slightly reduced padding */
+    box-shadow: var(--shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, color 0.3s ease, opacity 0.6s ease-out, transform 0.6s ease-out; /* Add transition for initial fade-in */
+    opacity: 0; /* Initial state for header animation */
+    transform: translateY(-20px); /* Initial state for header animation */
+}
+
+body.site-loaded .header {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.header .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2em; /* Slightly larger logo */
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    letter-spacing: -1px; /* Tighter letter spacing */
+}
+
+.logo-dot {
+    color: var(--accent-color); /* Dot in accent color */
+    font-size: 1.2em;
+}
+
+.nav {
+    display: flex;
+    align-items: center; /* Align nav-list and theme-toggle */
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center; /* Align theme toggle */
+}
+
+.nav-item {
+    margin-left: 35px; /* More space between items */
+}
+
+.nav-link {
+    font-weight: 600;
+    font-size: 1.1em;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2em;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.menu-toggle:hover {
+    color: var(--primary-color);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.6em; /* Slightly larger icon */
+    cursor: pointer;
+    margin-left: 25px; /* More space from nav links */
+    color: var(--text-color);
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+.theme-toggle:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    padding: 120px 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh; /* Make it more prominent */
+    background-color: var(--background-color);
+    position: relative; /* For potential background effects */
+    overflow: hidden; /* Important for animations */
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 80px; /* More space between content and image */
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    flex: 1.2;
+    min-width: 300px;
+    text-align: left;
+    z-index: 2; /* Ensure content is above image overlay */
+}
+
+.hero-intro {
+    font-size: 1.3em; /* Slightly larger */
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.hero-name {
+    font-size: 4.5em; /* Larger, more impactful name */
+    font-weight: 700;
+    line-height: 1.05;
+    margin-bottom: 25px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color)); /* Gradient text */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 4s ease-in-out infinite alternate; /* Subtle gradient animation */
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.hero-tagline {
+    font-size: 1.6em; /* More prominent tagline */
+    margin-bottom: 40px;
+    color: var(--text-color);
+    font-weight: 400; /* Slightly lighter weight */
+    max-width: 550px; /* Control line length for readability */
+    white-space: pre-line; /* Preserve line breaks from JS typewriter */
+    overflow: hidden; /* Hide overflow for typing effect */
+}
+
+/* Cursor Blinking Animation (controlled by JS adding 'typing-active') */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--primary-color); }
+}
+.hero-tagline.typing-active {
+    border-right: .15em solid var(--primary-color); /* Show blinking cursor */
+    animation: blink-caret .75s step-end infinite;
+}
+
+
+.hero-buttons {
+    display: flex;
+    gap: 20px; /* Space between buttons */
+    flex-wrap: wrap; /* Wrap on small screens */
+}
+.hero-buttons .btn {
+    padding: 14px 28px;
+}
+
+.hero-image {
+    flex: 0.8;
+    min-width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero-image img {
+    width: 350px; /* Larger image */
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 7px solid var(--primary-color); /* Thicker border */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Stronger, softer shadow */
+    transition: transform 0.4s ease;
+    position: relative;
+    z-index: 1;
+}
+.hero-image img:hover {
+    transform: scale(1.03) rotate(2deg); /* Subtle zoom and rotate on hover */
+}
+
+/* Subtle overlay effect for the image */
+.hero-image-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--accent-color) 0%, rgba(var(--accent-color-rgb), 0) 70%);
+    opacity: 0.1;
+    transform: scale(1.1);
+    animation: pulseGlow 5s infinite alternate;
+    z-index: 0;
+}
+@keyframes pulseGlow {
+    0% { transform: scale(1.05); opacity: 0.08; }
+    100% { transform: scale(1.15); opacity: 0.12; }
+}
+
+
+/* --- Projects Section --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly wider min-width */
+    gap: 40px;
+}
+
+.project-card {
+    background-color: var(--card-background);
+    border-radius: 10px; /* More rounded corners */
+    box-shadow: var(--shadow-light);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    border: 1px solid var(--border-color); /* Still keep a subtle border */
+}
+
+.project-card:hover {
+    transform: translateY(-12px); /* More pronounced lift */
+    box-shadow: var(--shadow-dark); /* Deeper shadow on hover */
+}
+
+.project-image {
+    width: 100%;
+    height: 250px; /* Slightly taller images */
+    object-fit: cover;
+    display: block;
+}
+
+.project-info {
+    padding: 30px; /* More padding inside card */
+}
+
+.project-info h3 {
+    font-size: 1.6em; /* Slightly larger heading */
+    margin-bottom: 12px;
+    color: var(--primary-color);
+}
+
+.project-description {
+    font-size: 1em;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.project-tech {
+    font-size: 0.9em;
+    color: var(--secondary-color);
+    margin-bottom: 25px;
+    font-weight: 500;
+    display: block; /* Ensure it takes full width */
+}
+
+.project-links {
+    display: flex;
+    gap: 15px; /* More space between links */
+    flex-wrap: wrap;
+}
+
+.btn-project {
+    padding: 10px 20px;
+    font-size: 0.95em;
+    border-radius: 6px;
+    display: flex; /* For icon alignment */
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+}
+
+.btn-project.btn-github {
+    background-color: #333; /* Darker background for GitHub */
+    color: #fff;
+    border: 2px solid #333;
+}
+body.dark-mode .btn-project.btn-github {
+    background-color: #555;
+    border-color: #555;
+}
+.btn-project.btn-github:hover {
+    background-color: #555;
+    border-color: #555;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-project.btn-live {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: 2px solid var(--primary-color);
+}
+.btn-project.btn-live:hover {
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Gaya untuk tautan proyek yang belum aktif (on going) */
+.disabled-link {
+    opacity: 0.5; /* Agak transparan */
+    pointer-events: none; /* Tidak bisa diklik */
+    cursor: not-allowed; /* Kursor tidak diizinkan */
+    background-color: var(--secondary-color) !important; /* Warna abu-abu */
+    border-color: var(--secondary-color) !important;
+}
+.disabled-link:hover {
+    transform: none !important; /* Hapus efek hover */
+    box-shadow: none !important;
+}
+
+
+/* --- About Section (for general styling consistency) --- */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.about-content h3 {
+    color: var(--primary-color);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 2em; /* Slightly larger about heading */
+    font-weight: 600;
+}
+
+.skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px; /* More space between skills */
+    margin-top: 10px;
+}
+
+.skills-list li {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px 18px; /* Larger skill badges */
+    border-radius: 25px; /* More rounded */
+    font-size: 1em; /* Slightly larger text */
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.skills-list li:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-3px);
+}
+
+
+/* --- Contact Section (for general styling consistency) --- */
+.contact-intro {
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    color: var(--text-color);
+    max-width: 700px; /* Constrain width for readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-whatsapp {
+    text-align: center;
+    margin-top: 30px;
+    padding: 30px; /* More padding */
+    background-color: var(--card-background);
+    border-radius: 10px; /* More rounded */
+    box-shadow: var(--shadow-light);
+    border: 1px solid var(--border-color);
+    max-width: 450px; /* Batasi lebar agar tidak terlalu besar */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-whatsapp p {
+    margin-bottom: 25px; /* More space */
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366; /* WhatsApp green */
+    color: #fff;
+    border: 2px solid #25D366;
+    padding: 14px 30px; /* Larger button */
+    font-size: 1.1em;
+    border-radius: 8px;
+}
+
+.whatsapp-btn:hover {
+    background-color: #1DA851; /* Darker green on hover */
+    border-color: #1DA851;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Mengatur ukuran dan spasi ikon Font Awesome di dalam tombol */
+.whatsapp-btn i {
+    margin-right: 10px; /* Spasi antara ikon dan teks */
+    font-size: 1.2em; /* Ukuran ikon di dalam tombol */
+}
+
+/* Override untuk dark mode agar ikon WhatsApp tetap hijau */
+body.dark-mode .whatsapp-btn {
+    background-color: #25D366;
+    border-color: #25D366;
+}
+body.dark-mode .whatsapp-btn:hover {
+    background-color: #1DA851;
+    border-color: #1DA851;
+}
+
+.social-links {
+    text-align: center;
+    margin-top: 60px; /* More space */
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* More space between icons */
+}
+
+.social-links a {
+    display: inline-block; /* Ensure transform applies */
+}
+/* Gaya untuk ikon Font Awesome di social-links */
+.social-links a i {
+    font-size: 45px; /* Ukuran ikon */
+    color: var(--text-color); /* Warna default dari teks, akan disesuaikan oleh dark mode */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Menyesuaikan warna ikon Font Awesome di light mode (jika perlu, tergantung ikon) */
+body:not(.dark-mode) .social-links a i {
+    color: #555; /* Misalnya, buat sedikit lebih gelap agar kontras di light mode */
+}
+
+/* Menyesuaikan warna ikon Font Awesome di dark mode */
+body.dark-mode .social-links a i {
+    color: var(--text-color); /* Gunakan warna teks dark mode untuk ikon */
+}
+
+.social-links a i:hover {
+    transform: translateY(-8px) scale(1.1); /* Efek hover yang lebih jelas */
+    color: var(--primary-color); /* Berubah warna saat hover */
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--card-background);
+    color: var(--text-color);
+    text-align: center;
+    padding: 30px 0;
+    border-top: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 0.9em;
+}
+
+
+/* --- Scroll Reveal Animations (Initial State) --- */
+/* Initial hidden state for elements that will be revealed by JS */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* State when item is visible */
+.reveal-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Add delays for staggering effects (controlled by JS adding --delay) */
+.section-title.is-visible { transition-delay: 0s; }
+.hero-content.is-visible { transition-delay: 0s; }
+.hero-image.is-visible { transition-delay: 0.2s; }
+.project-card.is-visible { transition-delay: var(--delay, 0s); } /* Delay set by JS */
+.about-content.is-visible { transition-delay: 0.1s; }
+.contact-intro.is-visible { transition-delay: 0s; }
+.contact-whatsapp.is-visible { transition-delay: 0.1s; }
+.social-links.is-visible { transition-delay: 0.2s; }
+
+
+/* --- Responsiveness (Media Queries) --- */
+@media (max-width: 992px) { /* Adjust breakpoint for larger tablets/smaller laptops */
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 60px;
+    }
+    .hero-content {
+        order: 2;
+        text-align: center;
+        margin-top: 0; /* Remove extra margin */
+    }
+    .hero-image {
+        order: 1;
+    }
+    .hero-buttons {
+        justify-content: center; /* Center buttons on mobile */
+    }
+    .hero-name {
+        font-size: 3.8em;
+    }
+    .hero-tagline {
+        font-size: 1.4em;
+    }
+    .project-card {
+        max-width: 450px; /* Limit card width on smaller screens for better spacing */
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .header .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: var(--header-height, 70px); /* Use a CSS variable for dynamic height */
+        left: 0;
+        background-color: rgba(var(--card-background-rgb), 0.95); /* More opaque */
+        backdrop-filter: blur(8px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+        transform: translateY(-100%); /* Start off-screen */
+        opacity: 0;
+        transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    .header .nav.active {
+        display: flex;
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+    }
+
+    .nav-item {
+        margin: 15px 0;
+    }
+
+    .nav-link {
+        font-size: 1.2em; /* Larger links for touch */
+        padding: 10px 0;
+    }
+    .nav-link::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .nav-link:hover::after {
+        width: 80%; /* Shorter underline for mobile */
+    }
+
+
+    .menu-toggle {
+        display: block;
+        margin-left: 20px; /* Ensure space from logo */
+        order: 2; /* Place after logo */
+    }
+
+    .theme-toggle {
+        margin-left: auto; /* Push toggle to the right in header */
+        order: 3; /* Place after menu toggle if needed, or adjust as desired */
+    }
+
+    .section-padding {
+        padding: 70px 0;
+    }
+
+    .section-title {
+        font-size: 2.2em;
+        margin-bottom: 50px;
+    }
+    .section-title::after {
+        width: 50px;
+        height: 3px;
+    }
+
+    .hero-name {
+        font-size: 3em;
+    }
+
+    .hero-tagline {
+        font-size: 1.2em;
+    }
+
+    .hero-buttons .btn {
+        width: 100%; /* Full width buttons */
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .hero-buttons .btn-secondary {
+        margin-top: 15px; /* Add margin top if buttons stack */
+    }
+
+    .hero-image img {
+        width: 280px;
+        height: 280px;
+    }
+
+    .project-card {
+        padding-bottom: 20px; /* More padding at bottom of card */
+    }
+    .project-info {
+        padding: 20px;
+    }
+    .project-links {
+        justify-content: center; /* Center project buttons */
+    }
+}
+
+@media (max-width: 480px) {
+    .header .header-content {
+        padding: 0 15px; /* Smaller padding for very small screens */
+    }
+    .logo {
+        font-size: 1.6em;
+    }
+    .theme-toggle {
+        font-size: 1.4em;
+    }
+    .menu-toggle {
+        font-size: 1.8em;
+    }
+    .hero-name {
+        font-size: 2.5em;
+    }
+    .hero-tagline {
+        font-size: 1em;
+        line-height: 1.6;
+    }
+    .hero-image img {
+        width: 250px;
+        height: 250px;
+    }
+    .btn {
+        padding: 12px 20px;
+        font-size: 0.95em;
+    }
+    .section-title {
+        font-size: 1.8em;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr; /* Stack cards on smallest screens */
+    }
+    .project-info h3 {
+        font-size: 1.4em;
+    }
+    .skills-list li {
+        font-size: 0.85em;
+        padding: 8px 14px;
+    }
+    .whatsapp-btn {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+    .social-links a i { /* Untuk ikon Font Awesome */
+        font-size: 40px;
+    }
+}
